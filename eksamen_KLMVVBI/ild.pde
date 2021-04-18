@@ -4,6 +4,7 @@ public class ild {
   float b = 10; 
   float h = 10;
 
+
   ild() {
     ild1 = loadImage("ild1.png");
   }
@@ -20,21 +21,22 @@ public class ild {
       h = (150/(tid-1))*1.3;
     }
     
-    
-
-    int xDiff = abs(xIld - xBrandmand);
+          int xDiff = abs(xIld - xBrandmand);
     int yDiff = abs(yIld - yBrandmand);
-    // println("xDiff: " + xDiff + " yDiff: " + yDiff);
     if (xDiff < 50 && yDiff < 50 && vandStartet) {
       b = 0;
       h = 0;
 
       onFire = false;
-    }
-
+     }
 
     imageMode(CENTER);
-
     image(ild1, xIld, yIld, b, h);
   }
+  
+
+  public boolean ildSlukket(){ //tjekker om ilden er slukket - bruges til at se om level er gennemført
+  return onFire;
+  }
+  
 }
